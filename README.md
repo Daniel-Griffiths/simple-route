@@ -6,7 +6,7 @@ A super simple router for mapping a url to a method on a class.
 Via Composer
 
 ```
-composer require daniel-griffiths/simple-route dev-master
+composer require daniel-griffiths/simple-route
 ```
 
 

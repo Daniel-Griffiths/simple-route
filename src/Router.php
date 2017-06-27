@@ -49,11 +49,11 @@ class Router
      * @param string $method  
      * @param string $uri     
      * @param string $handler
-     * @return array 
+     * @return void 
      */
     public function add($method, $uri, $handler)
     {
-        return $this->routes[$method][$uri] = explode('@', $handler);
+        $this->routes[$method][$uri] = is_callable($handler) ? $handler : explode('@', $handler);
     }
 
     /**
@@ -87,7 +87,13 @@ class Router
      */
     public function dispatch()
     {
-        return (new $this->routes[$this->method][$this->uri][0])->{$this->routes[$this->method][$this->uri][1]}();
+        $action = $this->routes[$this->method][$this->uri];
+
+        if(is_callable($action)){
+            return $action();
+        }
+
+        return (new $action[0])->{$action[1]}();
     }
 
     /**

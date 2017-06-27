@@ -1,0 +1,32 @@
+
+{
+    "name": "daniel-griffiths/simple-route",
+    "type": "library",
+    "description": "A super simple routing class",
+    "keywords": [
+        "daniel-griffiths",
+        "route",
+        "router",
+        "routing",
+        "simple",
+        "php"
+    ],
+    "homepage": "https://github.com/daniel-griffiths/simple-route",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Griffiths",
+            "email": "contact@danielgriffiths.me",
+            "homepage": "http://danielgriffiths.me",
+            "role": "Owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DanielGriffiths\\": "src/"
+        }
+    },
+    "require": {
+        "php": "~5.6|~7.0"
+    }
+}
